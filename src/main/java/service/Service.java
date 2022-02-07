@@ -1,21 +1,37 @@
 package service;
 
 import model.Car;
-import web.controller.CarController;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Service {
+    public  List<Car> cars(){
+       final List<Car> car = new ArrayList<>();
+        car.add(new Car("qq", "r",1));
+        car.add(new Car("ww", "w",2));
+        car.add(new Car("ee", "e",3));
+        car.add(new Car("rr", "g",4));
+        car.add(new Car("tt", "p",5));
+        return car;
+    }
 
-    private CarController carController = new CarController();
+    public  List<Car> getCars(Integer count) {
 
-    public List<Car> getCars(Integer count) {
-       int number=count != null&&count< carController.cars().size() ? count : carController.cars().size();
+        int number=count< cars().size() ? count : cars().size();
 
 
-        return carController.cars().subList(0, number);
+        return cars().subList(0, number);
 
-      }
+    }
+
+
+
+
 
 
 }
+
+
+

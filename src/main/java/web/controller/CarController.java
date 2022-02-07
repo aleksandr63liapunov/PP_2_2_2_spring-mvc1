@@ -14,15 +14,8 @@ import java.util.List;
 @Controller
 
 public class CarController {
-    public List<Car> cars(){
-        List<Car> cars = new ArrayList<>();
-        cars.add(new Car("qq", "r",1));
-        cars.add(new Car("ww", "w",2));
-        cars.add(new Car("ee", "e",3));
-        cars.add(new Car("rr", "g",4));
-        cars.add(new Car("tt", "p",5));
-        return cars;
-    }
+
+
     @GetMapping("/cars")
     public String carsShow(@RequestParam(value = "count", required = false) Integer count, Model model){
 
